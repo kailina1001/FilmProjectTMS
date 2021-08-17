@@ -1,0 +1,1 @@
+export { StarTitle } from "./StarTitle";

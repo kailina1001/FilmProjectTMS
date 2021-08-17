@@ -1,0 +1,15 @@
+
+.header-input::placeholder {
+    background: url(../../../image/search.svg) no-repeat;
+    background-position: 16px 0;
+    text-indent: 34px;
+}
+
+.header-input {
+width: 150px;
+height: 32px;
+border: 1px solid #EBEBEB;
+box-sizing: border-box;
+border-radius: 8px;
+margin-right: 17px;
+}

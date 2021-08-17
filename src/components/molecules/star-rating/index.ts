@@ -1,0 +1,1 @@
+export { StarRating } from "./Star-rating";

@@ -1,0 +1,1 @@
+export { ShortPoster } from "./ShortPoster";

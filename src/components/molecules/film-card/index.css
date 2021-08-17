@@ -1,0 +1,32 @@
+.film-card-wrapper {
+  margin-left: 0;
+  margin-top: 44px;
+  margin-bottom: 53px;
+  max-width: 798px;
+  min-height: 825px;
+  background: #fdfdff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 13px;
+}
+.film-card {
+  padding: 30px;
+  padding-bottom: 120px;
+}
+.card-content {
+  display: flex;
+  margin-bottom: 25px;
+}
+.left-content {
+  display: flex;
+  flex-direction: column;
+}
+.right-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 34px;
+  
+}
+.card-description {
+  margin-right: 30px;
+}

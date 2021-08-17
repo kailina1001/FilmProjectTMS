@@ -1,0 +1,1 @@
+export { ShortTitle } from "./ShortTitle";

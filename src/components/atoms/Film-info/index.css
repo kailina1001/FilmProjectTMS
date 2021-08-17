@@ -1,0 +1,44 @@
+.film-info {
+	overflow: hidden; 
+    font-family: "Alata";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #979797;
+}
+.film-info dt {
+    margin: 0;
+	padding: 8px 0;
+	width: 150px;
+	float: left;
+	clear: both;
+	color: #808d9a;
+}
+.film-info dd {
+    margin: 0 0 0 150px;
+	padding: 8px 0;
+    color: #3A236A;
+}
+
+
+/* .film-info-wrapper {
+    display: flex;
+    justify-content: space-around;
+
+}
+.film-keys {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.film-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.film-value li {
+    
+    max-width: 340px;
+} */

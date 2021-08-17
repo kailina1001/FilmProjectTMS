@@ -1,0 +1,11 @@
+.short-year {
+font-family: "Alata";
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 28px;
+display: flex;
+align-items: center;
+color: #7F7FD5;
+padding-bottom: 10px;
+}

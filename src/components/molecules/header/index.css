@@ -1,0 +1,15 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    flex: row;
+}
+
+.left-header {
+    display: flex;
+    align-items: center;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+}

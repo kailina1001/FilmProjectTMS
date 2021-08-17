@@ -1,0 +1,11 @@
+.trailer-name-wrapper {
+    font-family: Alata;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 33px;
+display: flex;
+align-items: center;
+color: #7F7FD5;
+margin-bottom: 28px;
+}

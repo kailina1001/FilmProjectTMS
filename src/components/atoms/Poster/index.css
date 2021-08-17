@@ -1,0 +1,9 @@
+.film-poster {
+    padding-top: 8px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.film-poster img {
+    max-width: 224px;
+}

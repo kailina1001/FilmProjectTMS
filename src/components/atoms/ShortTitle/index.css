@@ -1,0 +1,14 @@
+.short-title {
+font-family: "Alata";
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 28px;
+display: flex;
+align-items: center;
+color: #4F4F4F;
+
+max-width: 285px;
+min-height: 44px;
+padding-bottom: 10px;
+}
