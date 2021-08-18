@@ -1,13 +1,13 @@
 .description-wrapper {
-    font: normal normal 20px/1.4 "Alata", sans-serif;
-    color: #979797;
+  font: normal normal 20px/1.4 "Alata", sans-serif;
+  color: #979797;
 }
 .description-wrapper span {
-    font: normal normal 20px/1.4 "Alata", sans-serif;
-    color: #979797;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    height: 3.9em;
+  font: normal normal 20px/1.4 "Alata", sans-serif;
+  color: #979797;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  height: 3.9em;
 }

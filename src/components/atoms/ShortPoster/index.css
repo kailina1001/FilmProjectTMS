@@ -1,11 +1,11 @@
 .short-film-poster {
-    margin-top: 28px;
-    margin-bottom: 25px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  margin-top: 28px;
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .short-film-poster img {
-    width: 131px;
-    height: 199px;
+  width: 131px;
+  height: 199px;
 }

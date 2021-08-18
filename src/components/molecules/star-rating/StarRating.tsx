@@ -5,13 +5,12 @@ import { StarTitle } from "../../atoms/Star-title";
 import { Stars } from "../../atoms/Stars";
 import "./index.css";
 
-
-export const StarRating = memo(() => { 
-    return (
-        <div className="star-rating-wrapper">
-        <StarTitle />
-        <Stars />
-        <StarBtn />
-        </div>
-    )
-})
+export const StarRating = memo(() => {
+  return (
+    <div className="star-rating-wrapper">
+      <StarTitle />
+      <Stars />
+      <StarBtn />
+    </div>
+  );
+});

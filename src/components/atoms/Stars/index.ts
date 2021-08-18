@@ -1,1 +1,1 @@
-export { Stars} from "./Stars";
+export { Stars } from "./Stars";

@@ -1,11 +1,11 @@
 .description-trailer {
-    font-family: Alata;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 33px;
-display: flex;
-align-items: center;
+  font-family: Alata;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
 
-color: #979797;
+  color: #979797;
 }

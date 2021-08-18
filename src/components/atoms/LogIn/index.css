@@ -1,22 +1,22 @@
 .log-in-btn {
-    border: none;
-    background-color: none;
-    background: url(../../../image/galka.svg) center no-repeat;
-    background-size: contain;
-    width: 8px;
-    height: 4px;
-    cursor: pointer;
+  border: none;
+  background-color: none;
+  background: url(../../../image/galka.svg) center no-repeat;
+  background-size: contain;
+  width: 8px;
+  height: 4px;
+  cursor: pointer;
 }
 
 .log-in-wrap {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .user-name {
-    margin-right: 11px;
+  margin-right: 11px;
 }
 
 .log-in-wrap img {
-    margin-right: 9px;
+  margin-right: 9px;
 }

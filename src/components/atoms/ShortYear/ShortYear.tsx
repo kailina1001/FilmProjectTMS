@@ -3,13 +3,13 @@ import { memo } from "react";
 import "./index.css";
 
 interface IShortYear {
-    year: number;
+  year: number;
 }
 
-export const ShortYear = memo(({year}: IShortYear ) => {
-    return (
+export const ShortYear = memo(({ year }: IShortYear) => {
+  return (
     <div className="short-year">
-        <p>{year}</p>
+      <p>{year}</p>
     </div>
-    )
-})
+  );
+});

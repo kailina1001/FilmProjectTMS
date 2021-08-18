@@ -7,31 +7,17 @@ import { ShortTitle } from "../../atoms/ShortTitle";
 import { ShortYear } from "../../atoms/ShortYear";
 import { ShortDescrip } from "../../atoms/ShortDescription";
 
-
-export const ShortFilmCard = memo(() => { 
-    return (
-        <div className="short-film-wrapper">
-        {Imovies?.map((movie) => (
-            <div className="short-film-card">
-            <ShortPoster poster={movie.poster} />
-            <ShortTitle title={movie.title}/>
-            <ShortYear year={movie.year}/>
-            <ShortDescrip plot={movie.plot}/>
-            </div>
-))}
-        </div>
-    )
-})
-
-
-/* export const ShortFilmCard = memo(() => {
-    const arrMovie = Imovies[0]; 
-    return (
+export const ShortFilmCard = memo(() => {
+  return (
+    <div className="short-film-wrapper">
+      {Imovies?.map((movie) => (
         <div className="short-film-card">
-            <ShortPoster poster={arrMovie.poster} />
-            <ShortTitle title={arrMovie.title}/>
-            <ShortYear year={arrMovie.year}/>
-            <ShortDescrip plot={arrMovie.plot}/>
+          <ShortPoster poster={movie.poster} />
+          <ShortTitle title={movie.title} />
+          <ShortYear year={movie.year} />
+          <ShortDescrip plot={movie.plot} />
         </div>
-    )
-}) */
+      ))}
+    </div>
+  );
+});

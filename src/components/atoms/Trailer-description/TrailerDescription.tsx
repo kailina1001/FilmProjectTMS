@@ -6,10 +6,10 @@ interface ITrailerDescrip {
   description: string;
 }
 
-export const TrailerDescrip = memo(({description}: ITrailerDescrip) => {
+export const TrailerDescrip = memo(({ description }: ITrailerDescrip) => {
   return (
     <div className="description-trailer">
       <p>{description}</p>
     </div>
-  )
-})
+  );
+});

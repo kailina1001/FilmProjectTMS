@@ -7,7 +7,7 @@ interface IRating {
   imdbRating: number;
 }
 
-export const Rating = memo(({imdbRating, imdbVotes}: IRating) => {
+export const Rating = memo(({ imdbRating, imdbVotes }: IRating) => {
   return (
     <div className="rating-wrapper">
       <div className="rating">
@@ -18,5 +18,5 @@ export const Rating = memo(({imdbRating, imdbVotes}: IRating) => {
         <span className="voted-imdb">{imdbVotes} voted</span>
       </div>
     </div>
-  )
-})
+  );
+});

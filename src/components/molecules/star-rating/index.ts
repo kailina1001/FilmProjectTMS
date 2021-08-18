@@ -1,1 +1,1 @@
-export { StarRating } from "./Star-rating";
+export { StarRating } from "./StarRating";

@@ -6,10 +6,10 @@ interface IFilmName {
   title: string;
 }
 
-export const FilmTitle = memo(({title}:IFilmName) => {
+export const FilmTitle = memo(({ title }: IFilmName) => {
   return (
     <div className="film-name-wrapper">
       <h1>{title}</h1>
     </div>
-  )
-})
+  );
+});

@@ -6,10 +6,10 @@ interface IDescription {
   plot: string;
 }
 
-export const Description = memo(({plot}: IDescription) => {
+export const Description = memo(({ plot }: IDescription) => {
   return (
     <div className="description-wrapper">
       <p>{plot}</p>
     </div>
-  )
-})
+  );
+});

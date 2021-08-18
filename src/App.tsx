@@ -1,8 +1,8 @@
 import "./App.css";
 import { Imovies } from "./mock";
-import { Header } from './components/molecules/header';
-import { Navigation } from './components/molecules/navigation';
-import { FilmCard } from './components/molecules/film-card';
+import { Header } from "./components/molecules/header";
+import { Navigation } from "./components/molecules/navigation";
+import { FilmCard } from "./components/molecules/film-card";
 import { ShortFilmCard } from "./components/molecules/short-film-card";
 import { ShortTitleCard } from "./components/molecules/short-title-card";
 import { Title } from "./components/atoms/Title";
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="app">
       <nav className="app-nav">
-        <Navigation/>
+        <Navigation />
       </nav>
       <main className="app-wrapper">
         <Header />
@@ -24,12 +24,12 @@ function App() {
           <TrailerCard />
           <StarRating />
         </div>
-      <div className="other-films">
-        <div className="other-title">
-            <Title title={"Next movie"}/>
+        <div className="other-films">
+          <div className="other-title">
+            <Title title={"Next movie"} />
+          </div>
+          <ShortFilmCard />
         </div>
-        <ShortFilmCard />
-      </div>
       </main>
     </div>
   );

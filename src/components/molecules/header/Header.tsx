@@ -6,16 +6,15 @@ import { Search } from "../../atoms/Search/Search";
 import { Title } from "../../atoms/Title";
 import "./index.css";
 
-
 export const Header = memo(() => {
-    return (
-<div className="app-header">
-        <div className="left-header">
-                <Title  title={"Movie"}/>
-                <Search />
-                <Filter />
-        </div>
-                <LogIn />
-</div>
-    )
-})
+  return (
+    <div className="app-header">
+      <div className="left-header">
+        <Title title={"Movie"} />
+        <Search />
+        <Filter />
+      </div>
+      <LogIn />
+    </div>
+  );
+});

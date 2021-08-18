@@ -3,13 +3,13 @@ import { memo } from "react";
 import "./index.css";
 
 interface IShortDescription {
-    plot: string;
+  plot: string;
 }
 
-export const ShortDescrip = memo(({plot}: IShortDescription ) => {
-    return (
+export const ShortDescrip = memo(({ plot }: IShortDescription) => {
+  return (
     <div className="short-description">
-        <span>{plot}</span>
+      <span>{plot}</span>
     </div>
-    )
-})
+  );
+});

@@ -1,1 +1,1 @@
-export { TrailerDescrip } from "./Trailer-description";
+export { TrailerDescrip } from "./TrailerDescription";

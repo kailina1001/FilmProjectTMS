@@ -1,8 +1,8 @@
 .filter-btn {
-    border: none;
-    background-color: none;
-    background: url(../../../image/filter.svg);
-    width: 25.6px;
-    height: 32px;
-    cursor: pointer;
+  border: none;
+  background-color: none;
+  background: url(../../../image/filter.svg);
+  width: 25.6px;
+  height: 32px;
+  cursor: pointer;
 }

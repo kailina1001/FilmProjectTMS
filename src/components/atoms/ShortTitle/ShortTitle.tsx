@@ -3,13 +3,13 @@ import { memo } from "react";
 import "./index.css";
 
 interface IShortTitle {
-    title: string;
+  title: string;
 }
 
-export const ShortTitle = memo(({title}: IShortTitle ) => {
-    return (
+export const ShortTitle = memo(({ title }: IShortTitle) => {
+  return (
     <div className="film-poster">
-        <h1>{title}</h1>
+      <h1>{title}</h1>
     </div>
-    )
-})
+  );
+});
