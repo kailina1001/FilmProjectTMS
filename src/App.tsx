@@ -1,5 +1,5 @@
 import "./App.css";
-import { Imovies } from "./mock";
+import { movie } from "./mock";
 import { Header } from "./components/molecules/header";
 import { Navigation } from "./components/molecules/navigation";
 import { FilmCard } from "./components/molecules/film-card";
@@ -8,10 +8,11 @@ import { ShortTitleCard } from "./components/molecules/short-title-card";
 import { Title } from "./components/atoms/Title";
 import { TrailerCard } from "./components/molecules/trailer-card";
 import { StarRating } from "./components/molecules/star-rating";
+import { trailer } from "./mock";
 
 function App() {
-  const selectedUser = Imovies[0];
-
+  const selectedUser = movie[0];
+  const trailerVideo = trailer;
   return (
     <div className="app">
       <nav className="app-nav">
@@ -19,9 +20,9 @@ function App() {
       </nav>
       <main className="app-wrapper">
         <Header />
-        <FilmCard />
+        <FilmCard {...selectedUser} />
         <div className="extra-info">
-          <TrailerCard />
+          <TrailerCard {...trailerVideo} />
           <StarRating />
         </div>
         <div className="other-films">

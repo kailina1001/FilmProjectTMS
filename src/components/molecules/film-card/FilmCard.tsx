@@ -1,48 +1,30 @@
 import * as React from "react";
 import { memo } from "react";
 import "./index.css";
-import { Imovies } from "../../../mock";
+import { movie } from "../../../mock";
 import { Poster } from "../../atoms/Poster";
 import { Rating } from "../../atoms/Rating";
 import { Description } from "../../atoms/Description";
 import { FilmTitle } from "../../atoms/Film-title";
 import { FilmInfo } from "../../atoms/Film-info";
+import { Imovie } from "../../../types";
 
-/* interface ITrailerDescrip {
-  description: string;
-} */
-
-export const FilmCard = memo(() => {
-  const chooseMovie = Imovies[1];
+export const FilmCard = memo((movie: Imovie) => {
   return (
     <div className="film-card-wrapper">
       <div className="film-card">
         <div className="card-content">
           <div className="left-content">
-            <Poster poster={chooseMovie.poster} />
-            <Rating
-              imdbRating={chooseMovie.imdbRating}
-              imdbVotes={chooseMovie.imdbVotes}
-            />
+            <Poster poster={movie.poster} />
+            <Rating imdbRating={movie.imdbRating} imdbVotes={movie.imdbVotes} />
           </div>
           <div className="right-content">
-            <FilmTitle title={chooseMovie.title} />
-            <FilmInfo
-              year={chooseMovie.year}
-              released={chooseMovie.released}
-              runtime={chooseMovie.runtime}
-              boxOffice={chooseMovie.boxOffice}
-              genre={chooseMovie.genre}
-              country={chooseMovie.country}
-              production={chooseMovie.production}
-              writer={chooseMovie.writer}
-              director={chooseMovie.director}
-              actors={chooseMovie.actors}
-            />
+            <FilmTitle title={movie.title} />
+            <FilmInfo {...movie} />
           </div>
         </div>
         <div className="card-description">
-          <Description plot={chooseMovie.plot} />
+          <Description plot={movie.plot} />
         </div>
       </div>
     </div>
