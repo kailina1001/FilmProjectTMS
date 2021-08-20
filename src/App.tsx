@@ -9,6 +9,7 @@ import { Title } from "./components/atoms/Title";
 import { TrailerCard } from "./components/molecules/trailer-card";
 import { StarRating } from "./components/molecules/star-rating";
 import { trailer } from "./mock";
+import { FilterPage } from "./components/molecules/filter-page";
 
 function App() {
   const selectedUser = movie[0];
@@ -30,6 +31,12 @@ function App() {
             <Title title={"Next movie"} />
           </div>
           <ShortFilmCard />
+        </div>
+        <div className="filter-page">
+          <div className="other-title">
+            <Title title={"Movie"} />
+          </div>
+          <FilterPage />
         </div>
       </main>
     </div>

@@ -13,9 +13,13 @@
   justify-content: center;
 }
 
-.app-nav img {
+.app-navigation img {
   margin-top: 40px;
 }
+
+/* .app-navigation img:hover {
+  color: #7f7fd5;
+} */
 
 .dark-theme {
   border-color: #7f7fd5;
