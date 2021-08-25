@@ -1,13 +1,17 @@
 import * as React from "react";
 import { memo } from "react";
 import "./index.css";
-import { movie } from "../../../mock";
 import { ShortPoster } from "../../atoms/ShortPoster";
 import { ShortTitle } from "../../atoms/ShortTitle";
 import { ShortYear } from "../../atoms/ShortYear";
 import { ShortDescrip } from "../../atoms/ShortDescription";
+import { Imovie } from "../../../types";
 
-export const ShortFilmCard = memo(() => {
+interface IShortCard {
+  movie: Imovie[];
+}
+
+export const ShortFilmCard = memo(({ movie }: IShortCard) => {
   return (
     <div className="short-film-wrapper">
       {movie?.map((movie) => (

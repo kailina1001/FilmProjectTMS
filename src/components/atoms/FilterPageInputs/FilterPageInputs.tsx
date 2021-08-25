@@ -41,7 +41,9 @@ export const FilterPageInputs = memo(() => {
             </div>
             <div className="input-genres">
               <h3>Genres</h3>
-              <input></input>
+              <div className="genre-filter">
+                <button>add</button>
+              </div>
             </div>
           </div>
         </div>
