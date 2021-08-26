@@ -11,6 +11,7 @@
 .log-in-wrap {
   display: flex;
   align-items: center;
+  font-family: "Alata";
 }
 
 .user-name {

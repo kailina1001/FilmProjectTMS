@@ -1,24 +1,22 @@
 import * as React from "react";
 import { memo } from "react";
 import "./index.css";
-import { Imovies } from "../../../mock";
-import { ITrailer } from "../../../mock";
 import { TrailerTitle } from "../../atoms/Trailer-title";
 import { TrailerVideo } from "../../atoms/Trailer-video";
 import { TrailerDescrip } from "../../atoms/Trailer-description";
+import { Imovie, Itrailer } from "../../../types";
 
-/* interface ITrailerDescrip {
-  description: string;
-} */
+interface ITrailerCard {
+  movie: Imovie;
+  trailer: Itrailer;
+}
 
-export const TrailerCard = memo(() => {
-  const trailerMovie = Imovies[1];
-  const trailerVideo = ITrailer;
+export const TrailerCard = memo(({ trailer, movie }: ITrailerCard) => {
   return (
     <div className="trailer-card-wrapper">
-      <TrailerTitle title={trailerMovie.title} />
-      <TrailerVideo trailer={trailerVideo.trailer} />
-      <TrailerDescrip description={trailerVideo.description} />
+      <TrailerTitle {...movie} />
+      <TrailerVideo {...trailer} />
+      <TrailerDescrip {...trailer} />
     </div>
   );
 });

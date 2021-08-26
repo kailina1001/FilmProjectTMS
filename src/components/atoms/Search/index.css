@@ -11,4 +11,21 @@
   box-sizing: border-box;
   border-radius: 8px;
   margin-right: 17px;
+  font-family: "Alata";
+}
+
+.header-input-btn {
+  width: 60px;
+  height: 25px;
+  background: #7f7fd5;
+  border: 1px solid #7f7fd5;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-right: 30px;
+  font-family: "Alata";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  color: #ffffff;
 }

@@ -1,4 +1,9 @@
-.star-btn {
+.filter-big-btn-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.filter-big-btn {
   width: 266px;
   height: 68px;
   background: #7f7fd5;
@@ -12,9 +17,4 @@
   font-weight: normal;
   line-height: 33px;
   border: none;
-}
-
-.star-btn-wrapper {
-  display: flex;
-  justify-content: center;
 }

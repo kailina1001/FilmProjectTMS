@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  font-family: "Alata";
 }
 .short-film-poster img {
   width: 131px;

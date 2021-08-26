@@ -1,20 +1,8 @@
 import { dir } from "console";
 import * as React from "react";
 import { memo } from "react";
+import { Imovie } from "../../../types";
 import "./index.css";
-
-interface IFilmInfo {
-  year: number;
-  released: string;
-  runtime: string;
-  boxOffice: string;
-  genre: string[];
-  country: string;
-  production: string;
-  writer: string;
-  director: string;
-  actors: string[];
-}
 
 export const FilmInfo = memo(
   ({
@@ -28,7 +16,7 @@ export const FilmInfo = memo(
     writer,
     director,
     actors,
-  }: IFilmInfo) => {
+  }: Imovie) => {
     return (
       <dl className="film-info">
         <dt>Year</dt>
@@ -52,33 +40,6 @@ export const FilmInfo = memo(
         <dt>Actors</dt>
         <dd>{actors.toString()}</dd>
       </dl>
-
-      /*     <div className="film-info-wrapper">
-        <ul className="film-keys">
-          <li>Year</li>
-          <li>Released</li>
-          <li>Runtime</li>
-          <li>BoxOffice</li>
-          <li>Genre</li>
-          <li>Country</li>
-          <li>Production</li>
-          <li>Writer</li>
-          <li>Director</li>
-          <li>Actors</li>
-        </ul>
-        <ul className="film-value">
-          <li>{year}</li>
-          <li>{released}</li>
-          <li>{runtime}</li>
-          <li>{boxOffice}</li>
-          <li>{genre.join(', ')}</li>
-          <li>{country}</li>
-          <li>{production}</li>
-          <li>{writer}</li>
-          <li>{director}</li>
-          <li>{actors.toString()}</li>
-        </ul>
-    </div> */
     );
   }
 );

@@ -1,0 +1,130 @@
+.filter-page-input-wrapper {
+  margin-bottom: 58px;
+}
+
+.filter-page-input-blocks h3 {
+  font-family: "Alata";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  color: #979797;
+  height: 37px;
+}
+
+.filter-page-input-blocks p {
+  font-family: "Alata";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #7f7fd5;
+}
+
+.filter-page-input-title {
+  font-family: "Alata";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: #7f7fd5;
+  margin-bottom: 28px;
+}
+
+.filter-page-inputs-block {
+  display: flex;
+}
+
+.filter-page-inputs-left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 58px;
+}
+
+.input-search {
+  margin-bottom: 12px;
+}
+
+.input-search input {
+  width: 150px;
+  height: 32px;
+  background: #fdfdff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.input-countries select {
+  width: 150px;
+  height: 32px;
+  background: #fdfdff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.filter-page-inputs-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-years {
+  margin-bottom: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-years input {
+  width: 83px;
+  height: 32px;
+  background: #fdfdff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.input-rating {
+  margin-bottom: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-rating input {
+  width: 83px;
+  height: 32px;
+  background: #fdfdff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.genre-filter {
+  width: 271px;
+  height: 32px;
+  background: #fdfdff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-end;
+  width: 271px;
+  min-height: 32px;
+}
+
+.genre-filter button {
+  font-family: "Alata";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  align-items: center;
+  color: #7f7fd5;
+  border: none;
+  background: none;
+}

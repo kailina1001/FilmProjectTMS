@@ -1,4 +1,4 @@
-export interface Movies {
+export interface Imovie {
   id: number;
   title: string;
   year: number;
@@ -18,7 +18,7 @@ export interface Movies {
   production: string;
 }
 
-export interface Trailer {
+export interface Itrailer {
   trailer: string;
   description: string;
 }

@@ -1,0 +1,1 @@
+export { FilterPageTitle } from "./FilterPageTitle";
