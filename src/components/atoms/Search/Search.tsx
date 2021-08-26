@@ -10,7 +10,7 @@ interface Input {
 
 export const Search = memo(
   ({ searchValue, onChangeHandler, onClick }: Input) => (
-    <div>
+    <div className="header-input-wrapper">
       <input
         value={searchValue}
         onChange={(e) => onChangeHandler(e.target.value)}
@@ -18,7 +18,9 @@ export const Search = memo(
         placeholder="Search"
         type="search"
       />
-      <button onClick={onClick}>Click</button>
+      <button className="header-input-btn" onClick={onClick}>
+        Search
+      </button>
     </div>
   )
 );

@@ -20,13 +20,20 @@ function App() {
   const onChangeHandler = (text: string) => {
     console.log({ text });
     setSearchValue(text);
+    if (text.length > 2) {
+      const newFilms = movie.filter(({ title }) =>
+        title
+          .toLocaleLowerCase()
+          .trim()
+          .includes(searchValue.toLocaleLowerCase().trim())
+      );
+      setFilteredFilms(newFilms);
+      return;
+    }
+    setFilteredFilms(movie);
   };
 
   const onClick = () => {
-    const newFilms = movie.filter(({ title }) =>
-      title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
-    );
-    setFilteredFilms(newFilms);
     console.log("onClick");
   };
 
