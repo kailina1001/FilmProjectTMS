@@ -1,4 +1,4 @@
-.filter-btn {
+.btn__filter {
   border: none;
   background-color: none;
   background: url(../../../image/filter.svg);
@@ -7,3 +7,7 @@
   cursor: pointer;
   font-family: "Alata";
 }
+
+/* .btn__filter:hover {
+  background: #c4c4c4;
+} */
