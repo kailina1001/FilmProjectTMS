@@ -39,10 +39,10 @@ function App() {
     console.log("onClick");
   };
 
-  const [isClickedFilterBtn, setIsClickedFilterBtn] = useState(false);
+  const [isShowFilter, setIsShowFilter] = useState(false);
 
   const onClickFilterBtn = () => {
-    setIsClickedFilterBtn(!isClickedFilterBtn);
+    setIsShowFilter(!isShowFilter);
   };
 
   return (
@@ -57,7 +57,7 @@ function App() {
           onClick={onClick}
           onClickFilterBtn={onClickFilterBtn}
         />
-        {isClickedFilterBtn ? <FilterPage /> : null}
+        {isShowFilter ? <FilterPage /> : null}
 
         <FilmCard {...selectedUser} />
         <div className="extra-info">
