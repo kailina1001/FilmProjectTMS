@@ -10,10 +10,11 @@ interface Input {
   searchValue: string;
   onChangeHandler: (text: string) => void;
   onClick: () => void;
+  onClickFilterBtn: () => void;
 }
 
 export const Header = memo(
-  ({ searchValue, onChangeHandler, onClick }: Input) => {
+  ({ searchValue, onChangeHandler, onClick, onClickFilterBtn }: Input) => {
     return (
       <div className="app-header">
         <div className="left-header">
@@ -23,7 +24,7 @@ export const Header = memo(
             onChangeHandler={onChangeHandler}
             onClick={onClick}
           />
-          <Filter />
+          <Filter onClickFilterBtn={onClickFilterBtn} />
         </div>
         <LogIn />
       </div>

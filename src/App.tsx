@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { Header } from "./components/molecules/header";
 import { Navigation } from "./components/molecules/navigation";
@@ -10,6 +11,7 @@ import { StarRating } from "./components/molecules/star-rating";
 import { FilterPage } from "./components/molecules/filter-page";
 import { movie, trailer } from "./mock";
 import { useState } from "react";
+import { Filter } from "./components/atoms/Filter";
 
 function App() {
   const selectedUser = movie[1];
@@ -37,6 +39,12 @@ function App() {
     console.log("onClick");
   };
 
+  const [isShowFilter, setIsShowFilter] = useState(false);
+
+  const onClickFilterBtn = () => {
+    setIsShowFilter(!isShowFilter);
+  };
+
   return (
     <div className="app">
       <nav className="app-navig">
@@ -47,7 +55,10 @@ function App() {
           searchValue={searchValue}
           onChangeHandler={onChangeHandler}
           onClick={onClick}
+          onClickFilterBtn={onClickFilterBtn}
         />
+        {isShowFilter ? <FilterPage /> : null}
+
         <FilmCard {...selectedUser} />
         <div className="extra-info">
           <TrailerCard movie={selectedUser} trailer={trailerVideo} />
