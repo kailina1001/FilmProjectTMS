@@ -6,6 +6,7 @@ import { ShortTitle } from "../../atoms/ShortTitle";
 import { ShortYear } from "../../atoms/ShortYear";
 import { ShortDescrip } from "../../atoms/ShortDescription";
 import { Imovie } from "../../../types";
+import { ButtonShowFilm } from "../../atoms/ButtonShowFilm";
 
 interface IShortCard {
   movie: Imovie[];

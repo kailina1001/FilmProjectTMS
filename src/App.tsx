@@ -8,16 +8,22 @@ import { ShortTitleCard } from "./components/molecules/short-title-card";
 import { Title } from "./components/atoms/Title";
 import { TrailerCard } from "./components/molecules/trailer-card";
 import { StarRating } from "./components/molecules/star-rating";
-import { FilterPage } from "./components/molecules/filter-page";
+import { FilterPage } from "./components/organism/filter-page";
 import { movie, trailer } from "./mock";
 import { useState } from "react";
 import { Filter } from "./components/atoms/Filter";
+import { ISettingsSort } from "./types";
+import { ButtonShowFilm } from "./components/atoms/ButtonShowFilm";
 
 function App() {
+  // Поисковик
   const selectedUser = movie[1];
   const trailerVideo = trailer;
-  const [filteredFilms, setFilteredFilms] = useState(movie);
+  /* const countries = counties массив */
+
+  const [filteredFilms, setFilteredFilms] = useState(movie.slice(0, 1));
   const [searchValue, setSearchValue] = useState("");
+  const [isShowFilter, setIsShowFilter] = useState(false);
 
   const onChangeHandler = (text: string) => {
     console.log({ text });
@@ -39,10 +45,57 @@ function App() {
     console.log("onClick");
   };
 
-  const [isShowFilter, setIsShowFilter] = useState(false);
+  //Появление фильтра и сортировка по рейтингу и году
 
   const onClickFilterBtn = () => {
     setIsShowFilter(!isShowFilter);
+  };
+
+  const defaultSortSettings = [
+    {
+      title: "Rating",
+      field: "imdbRating",
+      isActive: false,
+    },
+    {
+      title: "Year",
+      field: "year",
+      isActive: false,
+    },
+  ];
+
+  const [sortSettings, setSortSettings] = useState(defaultSortSettings);
+
+  const handlerSorting = (field: string) => {
+    console.log("handlerSorting", { field });
+
+    const firstFilm = movie[0] as any;
+
+    const newSettings = sortSettings.map((setting) => ({
+      ...setting,
+      isActive: setting.field === field,
+    }));
+    setSortSettings(newSettings);
+
+    if (typeof firstFilm[field] === "number") {
+      const newFilms = [...movie].sort((a: any, b: any) => a[field] - b[field]);
+      setFilteredFilms(newFilms);
+      return;
+    }
+  };
+
+  // Пагинация с кнопкой
+
+  const onClickNextFilm = () => {
+    console.log("next film");
+    const fieldFilm = sortSettings.reduce((acc, { isActive, field }) => {
+      return isActive ? field : acc;
+    }, "");
+    setFilteredFilms(
+      [...movie]
+        .sort((a: any, b: any) => a[fieldFilm] - b[fieldFilm])
+        .slice(0, filteredFilms.length + 1)
+    );
   };
 
   return (
@@ -57,16 +110,18 @@ function App() {
           onClick={onClick}
           onClickFilterBtn={onClickFilterBtn}
         />
-        {isShowFilter ? <FilterPage /> : null}
-
-        <FilmCard {...selectedUser} />
-        <div className="extra-info">
-          <TrailerCard movie={selectedUser} trailer={trailerVideo} />
-          <StarRating />
-        </div>
+        {isShowFilter ? (
+          <FilterPage sortSettings={sortSettings} onClick={handlerSorting} />
+        ) : null}
         <div className="other-films">
           <div className="other-title">
-            <Title title={"Next movie"} />
+            {filteredFilms.length !== movie.length && (
+              <ButtonShowFilm
+                title={"Show Film"}
+                isActive={true}
+                onClickNextFilm={onClickNextFilm}
+              />
+            )}
           </div>
           {movie?.length ? (
             <ShortFilmCard movie={filteredFilms} />
@@ -74,11 +129,17 @@ function App() {
             <p>No movie</p>
           )}
         </div>
+        <FilmCard {...selectedUser} />
+        <div className="extra-info">
+          <TrailerCard movie={selectedUser} trailer={trailerVideo} />
+          <StarRating />
+        </div>
+
         <div className="filter-page">
           <div className="other-title">
             <Title title={"Movie"} />
           </div>
-          <FilterPage />
+          <FilterPage sortSettings={sortSettings} onClick={handlerSorting} />
         </div>
       </main>
     </div>
