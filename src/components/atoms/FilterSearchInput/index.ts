@@ -1,0 +1,1 @@
+export { FilmSearchInput } from "./FilmSearchInput";

@@ -9,10 +9,36 @@
   display: flex;
   flex-direction: column;
   padding: 0 32px 30px 24px;
+  margin-bottom: 20px;
 }
 .short-film-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, 341px);
   gap: 25px;
   margin-bottom: 43px;
+}
+
+.add-bookmark {
+  background: #7f7fd5;
+  border-radius: 13px;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  height: 50px;
+  border: none;
+  width: 150px;
+  margin-right: 20px;
+  margin-left: 95.5px;
+}
+
+.remove-bookmark {
+  background: #7f7fd5;
+  border-radius: 13px;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  height: 50px;
+  width: 150px;
+  border: none;
+  margin-left: 95.5px;
 }

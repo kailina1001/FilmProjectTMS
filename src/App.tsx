@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { Header } from "./components/molecules/header";
 import { Navigation } from "./components/molecules/navigation";
@@ -16,19 +16,80 @@ import { ISettingsSort } from "./types";
 import { ButtonShowFilm } from "./components/atoms/ButtonShowFilm";
 
 function App() {
-  // Поисковик
-  const selectedUser = movie[1];
+  /* const selectedUser = movie[1]; */
   const trailerVideo = trailer;
-  /* const countries = counties массив */
+  const countries = movie.map((movie) => movie.country);
+  /*  const countries = массивуникальных ингредиентов, 
+  прокинуть в фильтр пэйдж сантрис = кантрис через пропсы , по массиву пройти map ,
+  onChance  и через target value*/
 
+  //нажатие на маленькую карточку- выводим большую с этим же id
+  const onClickFilm = (id: number) => {
+    console.log({ id });
+    const newFilm = movie.find(({ id: filmId }) => id === filmId);
+
+    if (newFilm) {
+      setSelectedFilm(newFilm);
+    }
+  };
+
+  //add закладку
+  const addBookmark = (id: number) => {
+    console.log("addBookmark");
+    const hasId = bookmarksId.find((currentId) => currentId === id);
+    if (hasId) {
+      return;
+    }
+    const newBookmark = [...bookmarksId, id];
+    setBookmarksId(newBookmark);
+    localStorage.setItem("bookmarks", JSON.stringify(newBookmark));
+  };
+
+  //remove закладку
+  const removeBookmark = (id: number) => {
+    console.log("setBookmarksId");
+    const filtredBookmarks = bookmarksId.filter(
+      (currentId) => currentId !== id
+    );
+    setBookmarksId(filtredBookmarks);
+    localStorage.setItem("bookmarks", JSON.stringify(filtredBookmarks));
+  };
+
+  // подключение localStorage к закладкам
+  useEffect(() => {
+    const savedBookmarks = localStorage.getItem("bookmarks");
+    if (savedBookmarks) {
+      setBookmarksId(JSON.parse(savedBookmarks));
+    }
+
+    return () => {
+      //аналог анмаунта
+    };
+  }, []);
+
+  // Ставим метку просмотрено
+  const onChangeSwitcher = (id: number, checked: boolean) => {
+    const newViewedFilm = checked
+      ? viewedFilm.filter((currentId) => currentId !== id)
+      : [...viewedFilm, id];
+
+    setViewedFilm(newViewedFilm);
+
+    localStorage.setItem("viedFilm", JSON.stringify(newViewedFilm));
+  };
+
+  const [viewedFilm, setViewedFilm] = useState<number[]>([]);
+  console.log({ viewedFilm });
+  const [bookmarksId, setBookmarksId] = useState<number[]>([]);
   const [filteredFilms, setFilteredFilms] = useState(movie.slice(0, 1));
   const [searchValue, setSearchValue] = useState("");
   const [isShowFilter, setIsShowFilter] = useState(false);
+  const [selectedFilm, setSelectedFilm] = useState(movie[0]);
 
-  const onChangeHandler = (text: string) => {
-    console.log({ text });
-    setSearchValue(text);
-    if (text.length > 2) {
+  // Поисковик по useEffect
+  useEffect(() => {
+    console.log("search");
+    if (searchValue.length > 2) {
       const newFilms = movie.filter(({ title }) =>
         title
           .toLocaleLowerCase()
@@ -38,7 +99,35 @@ function App() {
       setFilteredFilms(newFilms);
       return;
     }
-    setFilteredFilms(movie);
+    if (searchValue.length) {
+      setFilteredFilms(movie);
+    }
+  }, [searchValue, setSearchValue]);
+
+  /* const onClickNextFilm = () => {
+    setFilteredFilms(
+      [...movie]
+        .slice(0, filteredFilms.length + 1)
+    );
+  }; */
+
+  // Поисковик по useState
+  const onChangeHandler = (text: string) => {
+    console.log({ text });
+    setSearchValue(text);
+
+    //надо перепесать через useEffect (написано выше!))
+    /* if (text.length > 2) {
+      const newFilms = movie.filter(({ title }) =>
+        title
+          .toLocaleLowerCase()
+          .trim()
+          .includes(searchValue.toLocaleLowerCase().trim())
+      );
+      setFilteredFilms(newFilms);
+      return;
+    }
+    setFilteredFilms(movie); */
   };
 
   const onClick = () => {
@@ -87,13 +176,13 @@ function App() {
   // Пагинация с кнопкой
 
   const onClickNextFilm = () => {
-    console.log("next film");
+    /* console.log("next film");
     const fieldFilm = sortSettings.reduce((acc, { isActive, field }) => {
       return isActive ? field : acc;
-    }, "");
+    }, ""); */
     setFilteredFilms(
       [...movie]
-        .sort((a: any, b: any) => a[fieldFilm] - b[fieldFilm])
+        /*         .sort((a: any, b: any) => a[fieldFilm] - b[fieldFilm]) */
         .slice(0, filteredFilms.length + 1)
     );
   };
@@ -124,23 +213,33 @@ function App() {
             )}
           </div>
           {movie?.length ? (
-            <ShortFilmCard movie={filteredFilms} />
+            <ShortFilmCard
+              movie={filteredFilms}
+              onClickFilm={onClickFilm}
+              addBookmark={addBookmark}
+              removeBookmark={removeBookmark}
+              bookmarksId={bookmarksId}
+              text={"Просмотрено"}
+              id={movie.id}
+              checked={Boolean(viewedFilm.includes(movie.id as number))}
+              onChange={onChangeSwitcher}
+            />
           ) : (
             <p>No movie</p>
           )}
         </div>
-        <FilmCard {...selectedUser} />
+        <FilmCard {...selectedFilm} />
         <div className="extra-info">
-          <TrailerCard movie={selectedUser} trailer={trailerVideo} />
+          <TrailerCard movie={selectedFilm} trailer={trailerVideo} />
           <StarRating />
         </div>
 
-        <div className="filter-page">
+        {/* <div className="filter-page">
           <div className="other-title">
             <Title title={"Movie"} />
           </div>
           <FilterPage sortSettings={sortSettings} onClick={handlerSorting} />
-        </div>
+        </div> */}
       </main>
     </div>
   );
