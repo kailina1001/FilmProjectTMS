@@ -19,7 +19,7 @@ export const FilterPageInputs = memo(() => {
               <h3>Countries</h3>
               <select>
                 <option></option>
-                <option>United States</option>
+                <option></option>
                 <option></option>
               </select>
             </div>
