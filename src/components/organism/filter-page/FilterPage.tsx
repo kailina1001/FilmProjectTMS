@@ -1,7 +1,7 @@
 import * as React from "react";
 import { memo } from "react";
 import { FilterBigBtn } from "../../atoms/FilterPageBigBtn";
-import { FilterPageInputs } from "../../atoms/FilterPageInputs";
+import { FilterPageInputs } from "../../molecules/FilterPageInputs";
 import { FilterPageTitle } from "../../atoms/FilterPageTitle";
 import { ISettingsSort } from "../../../types";
 import "./index.css";
@@ -18,6 +18,7 @@ export const FilterPage = memo(({ onClick, sortSettings }: IFilter) => {
     <div className="filter-page-wrapper">
       <Title title={"Sort by"} />
       <SortingByFilter sortSettings={sortSettings} onClick={onClick} />
+      <Title title={"Filter"} />
       <FilterPageInputs />
       <FilterBigBtn />
     </div>

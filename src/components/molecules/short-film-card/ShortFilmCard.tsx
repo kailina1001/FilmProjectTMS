@@ -7,22 +7,79 @@ import { ShortYear } from "../../atoms/ShortYear";
 import { ShortDescrip } from "../../atoms/ShortDescription";
 import { Imovie } from "../../../types";
 import { ButtonShowFilm } from "../../atoms/ButtonShowFilm";
+import { Switch } from "../../atoms/Switch";
 
 interface IShortCard {
   movie: Imovie[];
+  onClickFilm: (id: number) => void;
+  addBookmark: (id: number) => void;
+  removeBookmark: (id: number) => void;
+  bookmarksId: number[];
+  viewedFilm: number[];
+  checked: boolean;
+  text: string;
+  onChange: (id: number, checked: boolean) => void;
 }
 
-export const ShortFilmCard = memo(({ movie }: IShortCard) => {
-  return (
-    <div className="short-film-wrapper">
-      {movie?.map((movie) => (
-        <div className="short-film-card">
-          <ShortPoster poster={movie.poster} />
-          <ShortTitle title={movie.title} />
-          <ShortYear year={movie.year} />
-          <ShortDescrip plot={movie.plot} />
+export const ShortFilmCard = memo(
+  ({
+    movie,
+    onClickFilm,
+    addBookmark,
+    removeBookmark,
+    bookmarksId,
+    viewedFilm,
+    text,
+    checked,
+    onChange,
+  }: IShortCard) => {
+    return (
+      <>
+        <div className="short-film-wrapper">
+          {" "}
+          {/* переименовать с short на list- это список фильмов!!!! */}
+          {movie?.map((movie) => (
+            <div key={movie.id}>
+              <div
+                className="short-film-card"
+                onClick={() => onClickFilm(movie.id)}
+              >
+                <ShortPoster poster={movie.poster} />
+                <ShortTitle title={movie.title} />
+                <ShortYear year={movie.year} />
+                <ShortDescrip plot={movie.plot} />
+              </div>
+              <div className="under-card">
+                <div>
+                  <Switch
+                    checked={viewedFilm.includes(movie.id) ? true : false}
+                    text={text}
+                    onChange={() => onChange(movie.id, checked)}
+                    id={movie.id}
+                  />
+                </div>
+                <div>
+                  {!bookmarksId?.find((id) => id === movie.id) ? (
+                    <button
+                      className="add-bookmark"
+                      onClick={() => addBookmark(movie.id)}
+                    >
+                      Add
+                    </button>
+                  ) : (
+                    <button
+                      className="remove-bookmark"
+                      onClick={() => removeBookmark(movie.id)}
+                    >
+                      Remove
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  );
-});
+      </>
+    );
+  }
+);
