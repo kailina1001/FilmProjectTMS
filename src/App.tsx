@@ -61,6 +61,10 @@ function App() {
     if (savedBookmarks) {
       setBookmarksId(JSON.parse(savedBookmarks));
     }
+    const savedViewedFilms = localStorage.getItem("viedFilm");
+    if (savedViewedFilms) {
+      setViewedFilm(JSON.parse(savedViewedFilms));
+    }
 
     return () => {
       //аналог анмаунта
@@ -69,6 +73,8 @@ function App() {
 
   // Ставим метку просмотрено
   const onChangeSwitcher = (id: number, checked: boolean) => {
+    setIsViewedChecked(!isViewedChecked);
+
     const newViewedFilm = checked
       ? viewedFilm.filter((currentId) => currentId !== id)
       : [...viewedFilm, id];
@@ -79,6 +85,7 @@ function App() {
   };
 
   const [viewedFilm, setViewedFilm] = useState<number[]>([]);
+  const [isViewedChecked, setIsViewedChecked] = useState(false);
   console.log({ viewedFilm });
   const [bookmarksId, setBookmarksId] = useState<number[]>([]);
   const [filteredFilms, setFilteredFilms] = useState(movie.slice(0, 1));
@@ -219,9 +226,10 @@ function App() {
               addBookmark={addBookmark}
               removeBookmark={removeBookmark}
               bookmarksId={bookmarksId}
+              viewedFilm={viewedFilm}
               text={"Просмотрено"}
-              id={movie.id}
-              checked={Boolean(viewedFilm.includes(movie.id as number))}
+              checked={isViewedChecked}
+              /* checked={Boolean(viewedFilm.includes(movie.id as number))} */
               onChange={onChangeSwitcher}
             />
           ) : (

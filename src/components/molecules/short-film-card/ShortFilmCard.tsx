@@ -15,9 +15,9 @@ interface IShortCard {
   addBookmark: (id: number) => void;
   removeBookmark: (id: number) => void;
   bookmarksId: number[];
+  viewedFilm: number[];
   checked: boolean;
   text: string;
-  id: number;
   onChange: (id: number, checked: boolean) => void;
 }
 
@@ -28,7 +28,7 @@ export const ShortFilmCard = memo(
     addBookmark,
     removeBookmark,
     bookmarksId,
-    id,
+    viewedFilm,
     text,
     checked,
     onChange,
@@ -52,9 +52,9 @@ export const ShortFilmCard = memo(
               <div className="under-card">
                 <div>
                   <Switch
-                    checked={checked}
+                    checked={viewedFilm.includes(movie.id) ? true : false}
                     text={text}
-                    onChange={() => onChange(id, checked)}
+                    onChange={() => onChange(movie.id, checked)}
                     id={movie.id}
                   />
                 </div>
@@ -64,7 +64,7 @@ export const ShortFilmCard = memo(
                       className="add-bookmark"
                       onClick={() => addBookmark(movie.id)}
                     >
-                      Add bookmark
+                      Add
                     </button>
                   ) : (
                     <button

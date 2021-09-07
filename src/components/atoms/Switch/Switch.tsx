@@ -20,6 +20,7 @@ export const Switch = memo(({ text, id, checked, onChange }: ISwitch) => {
           checked={checked}
           onChange={() => onChange(id, checked)}
         />
+        <span className="switch-slider" />
       </label>
     </div>
   );
