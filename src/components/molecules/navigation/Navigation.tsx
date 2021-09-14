@@ -9,20 +9,21 @@ import play from "../../../image/nav-pic/play.svg";
 import diagram from "../../../image/nav-pic/diagram.svg";
 import settings from "../../../image/nav-pic/settings.svg";
 import darkTheme from "../../../image/nav-pic/dark-theme.svg";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export const Navigation = memo(() => {
   return (
     <div className="app-navigation-wrapper">
       <div className="app-navigation">
-        <a href="#">
+        <Link to="/">
           <img src={home} />
-        </a>
-        <a href="#">
+        </Link>
+        <Link to="/film/:id">
           <img src={list} />
-        </a>
-        <a href="#">
+        </Link>
+        <Link to="/films">
           <img src={users} />
-        </a>
+        </Link>
         <a href="#">
           <img src={mail} />
         </a>

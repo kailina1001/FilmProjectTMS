@@ -1,0 +1,11 @@
+.filter-title {
+  font-family: "Alata";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  color: #979797;
+  height: 37px;
+}

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { memo } from "react";
 import { FilterBigBtn } from "../../atoms/FilterPageBigBtn";
-import { FilterPageInputs } from "../../atoms/FilterPageInputs";
+import { FilterPageInputs } from "../FilterPageInputs";
 import { FilterPageTitle } from "../../atoms/FilterPageTitle";
 import { ISettingsSort } from "../../../types";
 import "./index.css";

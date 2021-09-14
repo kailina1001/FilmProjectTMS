@@ -14,7 +14,7 @@ export const ButtonByFilter = memo(
     return (
       <button
         className="button-by-filter"
-        style={{ background: isActive ? "#7F7FD5" : "#EBEBEB" }}
+        style={{ background: isActive ? "#7F7FD5" : "#adadad" }}
         onClick={() => onClick(field)}
       >
         {title}

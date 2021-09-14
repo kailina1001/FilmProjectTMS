@@ -1,38 +1,34 @@
 import * as React from "react";
 import { memo } from "react";
 import "./index.css";
+import { FilterTitle } from "../../atoms/FilterTitle";
+import { FilmSearchInput } from "../../atoms/FilterSearchInput";
+import { FilterCountries } from "../../atoms/FilterCountries";
 
 export const FilterPageInputs = memo(() => {
   return (
     <div className="filter-page-input-wrapper">
-      <div className="filter-page-input-title">
-        <h2>Filter:</h2>
-      </div>
       <div className="filter-page-input-blocks">
         <div className="filter-page-inputs-block">
           <div className="filter-page-inputs-left">
             <div className="input-search">
-              <h3>Search in title and plot</h3>
-              <input></input>
+              <FilterTitle filterTitle={"Search in title and plot"} />
+              <FilmSearchInput />
             </div>
             <div className="input-countries">
-              <h3>Countries</h3>
-              <select>
-                <option></option>
-                <option></option>
-                <option></option>
-              </select>
+              <FilterTitle filterTitle={"Countries"} />
+              <FilterCountries />
             </div>
           </div>
           <div className="filter-page-inputs-right">
-            <h3>Years</h3>
+            <FilterTitle filterTitle={"Years"} />
             <div className="input-years">
               <p>From</p>
               <input></input>
               <p>To</p>
               <input></input>
             </div>
-            <h3>Rating</h3>
+            <FilterTitle filterTitle={"Rating"} />
             <div className="input-rating">
               <p>From</p>
               <input></input>
@@ -40,7 +36,7 @@ export const FilterPageInputs = memo(() => {
               <input></input>
             </div>
             <div className="input-genres">
-              <h3>Genres</h3>
+              <FilterTitle filterTitle={"Genres"} />
               <div className="genre-filter">
                 <button>add</button>
               </div>
