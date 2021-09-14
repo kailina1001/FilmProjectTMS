@@ -18,6 +18,22 @@
   margin-bottom: 43px;
 }
 
+.open-card {
+  background: #7f7fd5;
+  border-radius: 13px;
+  padding: 3px;
+  font-size: 16px;
+  color: white;
+  height: 40px;
+  border: none;
+  width: 120px;
+}
+
+.film-card-list {
+  text-decoration: none;
+  color: inherit;
+}
+
 .add-bookmark {
   background: #7f7fd5;
   border-radius: 13px;
@@ -46,4 +62,5 @@
 .under-card {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }

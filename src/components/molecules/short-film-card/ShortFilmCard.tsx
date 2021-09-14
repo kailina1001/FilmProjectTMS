@@ -8,6 +8,7 @@ import { ShortDescrip } from "../../atoms/ShortDescription";
 import { Imovie } from "../../../types";
 import { ButtonShowFilm } from "../../atoms/ButtonShowFilm";
 import { Switch } from "../../atoms/Switch";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 interface IShortCard {
   movie: Imovie[];
@@ -40,15 +41,17 @@ export const ShortFilmCard = memo(
           {/* переименовать с short на list- это список фильмов!!!! */}
           {movie?.map((movie) => (
             <div key={movie.id}>
-              <div
-                className="short-film-card"
-                onClick={() => onClickFilm(movie.id)}
-              >
-                <ShortPoster poster={movie.poster} />
-                <ShortTitle title={movie.title} />
-                <ShortYear year={movie.year} />
-                <ShortDescrip plot={movie.plot} />
-              </div>
+              <Link className="film-card-list" to={"film/" + movie.id}>
+                <div
+                  className="short-film-card"
+                  onClick={() => onClickFilm(movie.id)}
+                >
+                  <ShortPoster poster={movie.poster} />
+                  <ShortTitle title={movie.title} />
+                  <ShortYear year={movie.year} />
+                  <ShortDescrip plot={movie.plot} />
+                </div>
+              </Link>
               <div className="under-card">
                 <div>
                   <Switch
@@ -75,6 +78,11 @@ export const ShortFilmCard = memo(
                     </button>
                   )}
                 </div>
+              </div>
+              <div>
+                <Link className="film-card-list" to={"film/" + movie.id}>
+                  <button className="open-card">Открыть карточку</button>{" "}
+                </Link>
               </div>
             </div>
           ))}
